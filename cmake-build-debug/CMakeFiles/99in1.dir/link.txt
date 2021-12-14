@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\99in1.dir/objects.a
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\ar.exe cr CMakeFiles\99in1.dir/objects.a @CMakeFiles\99in1.dir\objects1.rsp
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\99in1.dir/objects.a -Wl,--no-whole-archive -o 99in1.exe -Wl,--out-implib,lib99in1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\99in1.dir\linklibs.rsp

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/gameswhm/drawmap.c
+stdio.h
+-
+
+D:/gameswhm/main.c
+stdio.h
+-
+conio.h
+-
+windows.h
+-
+stdlib.h
+-
+drawmap.c
+D:/gameswhm/drawmap.c
+

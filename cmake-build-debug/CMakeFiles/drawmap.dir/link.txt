@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\drawmap.dir/objects.a
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\ar.exe cr CMakeFiles\drawmap.dir/objects.a @CMakeFiles\drawmap.dir\objects1.rsp
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\drawmap.dir/objects.a -Wl,--no-whole-archive -o drawmap.exe -Wl,--out-implib,libdrawmap.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\drawmap.dir\linklibs.rsp

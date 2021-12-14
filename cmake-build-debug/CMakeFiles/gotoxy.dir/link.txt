@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\gotoxy.dir/objects.a
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\ar.exe cr CMakeFiles\gotoxy.dir/objects.a @CMakeFiles\gotoxy.dir\objects1.rsp
+C:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\gotoxy.dir/objects.a -Wl,--no-whole-archive -o gotoxy.exe -Wl,--out-implib,libgotoxy.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\gotoxy.dir\linklibs.rsp

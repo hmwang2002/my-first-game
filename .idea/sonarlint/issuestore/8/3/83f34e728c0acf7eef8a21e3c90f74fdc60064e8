@@ -1,0 +1,11 @@
+
+ec:S5276
+"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8ñÙ…ÊÛ/
+ec:S5276
+"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8ñÙ…ÊÛ/
+Lc:S1117"2declaration shadows a variable in the global scope(ıŸ¸İ8ñÙ…ÊÛ/
+Lc:S1117"2declaration shadows a variable in the global scope(ıŸ¸İ8òÙ…ÊÛ/
+Vc:S5276"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8òÙ…ÊÛ/
+Vc:S5276C"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8òÙ…ÊÛ/
+ˆc:SingleGotoOrBreakPerIterationB"QReduce the number of nested "break" and "goto" statements from 2 to 1 authorized.(†®¦õüÿÿÿÿ8ÁÚ…ÊÛ/
+lc:BackJumpWithGotoG"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8ÁÚ…ÊÛ/
