@@ -1,0 +1,25 @@
+
+ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8åôÃâÛ/
+ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8æôÃâÛ/
+Vc:S52766"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8èôÃâÛ/
+Vc:S5276_"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
+Wc:S5276´"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
+ˆc:SingleGotoOrBreakPerIteration5"QReduce the number of nested "break" and "goto" statements from 3 to 1 authorized.(†®¦õüÿÿÿÿ8ĞöÃâÛ/
+lc:BackJumpWithGoto:"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8ĞöÃâÛ/
+lc:BackJumpWithGoto>"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8ÑöÃâÛ/
+sc:S3776N"TRefactor this function to reduce its Cognitive Complexity from 40 to the 25 allowed.(‚ñ œşÿÿÿÿ8ÑöÃâÛ/
+fc:S134f"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+fc:S134s"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+gc:S134€"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+_c:S1751\"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÑöÃâÛ/
+rc:BackJumpWithGotoŠ"GThis goto statement must be replaced by a standard iteration statement.(µıÛûÿÿÿÿ8ÑöÃâÛ/
+oc:S3776"TRefactor this function to reduce its Cognitive Complexity from 30 to the 25 allowed.(ü®ó„8Ú¨ßâÛ/
+lc:S134Á"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«¨ïøÿÿÿÿ8İöÃâÛ/
+`c:S1751³"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8İöÃâÛ/
+cc:SingleDeclarationPerStatement’"0Define each identifier in a dedicated statement.(ÜÎÁò8İöÃâÛ/
+}c:SingleGotoOrBreakPerIteration³"EReduce the number of nested "goto" statements from 4 to 1 authorized.(†®¦õüÿÿÿÿ8İöÃâÛ/
+rc:BackJumpWithGoto×"GThis goto statement must be replaced by a standard iteration statement.(ŒÅÜÀşÿÿÿÿ8İöÃâÛ/
+rc:BackJumpWithGoto·"GThis goto statement must be replaced by a standard iteration statement.(³‹ÖÆşÿÿÿÿ8İöÃâÛ/
+mc:BackJumpWithGoto¸"GThis goto statement must be replaced by a standard iteration statement.(ÛàÊİ8ª§ââÛ/
+rc:BackJumpWithGotoÌ"GThis goto statement must be replaced by a standard iteration statement.(ŒÅÜÀşÿÿÿÿ8İöÃâÛ/
+c:EmptyCompoundStatementÏ"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(íşª´ûÿÿÿÿ8İöÃâÛ/

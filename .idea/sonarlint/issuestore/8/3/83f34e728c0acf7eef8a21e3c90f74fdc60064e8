@@ -1,0 +1,22 @@
+
+ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Þ×ƒ8¹ÕæâÛ/
+ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Þ×ƒ8¹ÕæâÛ/
+Vc:S52765"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8¹ÕæâÛ/
+Vc:S5276^"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8¹ÕæâÛ/
+Dc:S1117µ"$declaration shadows a local variable(øËÚÿÿÿÿÿ8ºÕæâÛ/
+Wc:S5276·"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ºÕæâÛ/
+ˆc:SingleGotoOrBreakPerIteration4"QReduce the number of nested "break" and "goto" statements from 3 to 1 authorized.(†®¦õüÿÿÿÿ8þÕæâÛ/
+lc:BackJumpWithGoto9"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8þÕæâÛ/
+lc:BackJumpWithGoto="GThis goto statement must be replaced by a standard iteration statement.(ç„í±8þÕæâÛ/
+sc:S3776M"TRefactor this function to reduce its Cognitive Complexity from 40 to the 25 allowed.(‚ñ œþÿÿÿÿ8ÿÕæâÛ/
+fc:S134e"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÿÕæâÛ/
+fc:S134r"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÿÕæâÛ/
+fc:S134~"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÿÕæâÛ/
+_c:S1751["@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÿÕæâÛ/
+rc:BackJumpWithGoto‡"GThis goto statement must be replaced by a standard iteration statement.(µýÛûÿÿÿÿ8ÿÕæâÛ/
+`c:S1751´"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÖæâÛ/
+cc:SingleDeclarationPerStatement"0Define each identifier in a dedicated statement.(ÜÎÁò8ÖæâÛ/
+rc:BackJumpWithGotoÁ"GThis goto statement must be replaced by a standard iteration statement.(ŒÅÜÀþÿÿÿÿ8‚ÖæâÛ/
+‡c:EmptyCompoundStatementº"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(ÁòËP8‚ÖæâÛ/
+ˆc:EmptyCompoundStatement¼"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(¿Å¤Í8‚ÖæâÛ/
+c:EmptyCompoundStatement¾"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(”ÅÇâøÿÿÿÿ8ƒÖæâÛ/

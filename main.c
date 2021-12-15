@@ -10,13 +10,14 @@ int w = 100;
 int h = 50;
 typedef struct player{
     char *name;
-    int blood;
+    int HP;
     int power;
 }Player;
 void gotoxy(int x,int y){
     COORD co = (COORD){.X = x, .Y = y};
     SetConsoleCursorPosition(consoleHandle,co);
 }
+void reset(Player *m,Player *n);
 void game1(char **map);
 void game2(char **map);
 int main() {
@@ -105,8 +106,8 @@ void game1(char **map){
                 }else if(c == '3'){
                     printf("Computer: paper   You: paper");
                 }
-                Sleep(2000);
-                //暂停2s
+                gotoxy(w / 2 - 10,26);
+                system("pause");
             }else if((c == '1' && computer == 2) || (c == '2' && computer == 3) || (c == '3' && computer == 1)){
                 gotoxy(w/2 - 7,24);
                 printf("Good job! You win!");
@@ -118,7 +119,8 @@ void game1(char **map){
                 }else if(c == '3'){
                     printf("Computer: rock   You: paper");
                 }
-                Sleep(2000);
+                gotoxy(w / 2 - 10,26);
+                system("pause");
             }else if((c == '1' && computer == 3) || (c == '2' && computer == 1) || (c == '3' && computer == 2)){
                 gotoxy(w/2 - 7,24);
                 printf("Sorry. You lose.");
@@ -130,7 +132,8 @@ void game1(char **map){
                 }else if(c == '3'){
                     printf("Computer: scissors   You: paper");
                 }
-                Sleep(2000);
+                gotoxy(w / 2 - 10,26);
+                system("pause");
             }
             goto RET1;
         }
@@ -140,7 +143,10 @@ void game2(char **map){
     CONSOLE_CURSOR_INFO cci;
     cci.bVisible = FALSE;
     SetConsoleCursorInfo(consoleHandle,&cci);
+    Player you,computer;
+    reset(&you,&computer);
     RET2: system("cls");
+    //RET2: 重启游戏2
     drawmap(map,w,h);
     gotoxy(w / 2 - 10,1);
     printf("Welcome to Clapping game");
@@ -154,23 +160,16 @@ void game2(char **map){
     printf("Warning: If your power is zero and you choose to attack, then you lose");
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
-    Player you,computer;
-    you .name = "You";
-    you .blood = 100;
-    you .power = 0;
-    computer .name = "Computer";
-    computer .blood = 100;
-    computer .power = 0;
     gotoxy(3,6);
     printf("%s",computer.name);
     gotoxy(3,7);
-    printf("blood: %d",computer.blood);
+    printf("blood: %d",computer.HP);
     gotoxy(3,8);
     printf("power: %d",computer.power);
     gotoxy(w - 12,6);
     printf("%s",you.name);
     gotoxy(w - 12,7);
-    printf("blood: %d",you.blood);
+    printf("blood: %d",you.HP);
     gotoxy(w - 12,8);
     printf("power: %d",you.power);
     /**
@@ -178,19 +177,50 @@ void game2(char **map){
      */
     while (1){
         while (kbhit() != 0){
-            int computer = ComputerChoice();
-            //产生随机数
             char c = getch();
+            int com = 0;
+            RET3: com = ComputerChoice();//产生随机数
+            if(computer.power == 0 && com == 2)goto RET3;
+            if(you.power == 0 && com == 3)goto RET3;
+            /**
+             * 防止出现没有能量电脑却攻击的情况
+             * 防止出现玩家没能量，电脑却防守的情况
+             */
             if(c == 'q'){
                 return;
-            }else if( (c == '1' && computer == 1 )||(c == '2' && computer == 2) || (c == '3' && computer == 3)){
-
-            }else if((c == '1' && computer == 2) || (c == '2' && computer == 3) || (c == '3' && computer == 1)){
-
-            }else if((c == '1' && computer == 3) || (c == '2' && computer == 1) || (c == '3' && computer == 2)){
+            }else if(c == '1'){
+                you.power += 10;
+                if(com == 1){
+                    computer.power += 10;
+                }else if(com == 2){
+                    you.HP -= 10;
+                    if(you.HP <= 0){
+                        gotoxy(w - 4,7);
+                        printf("\b\b %d  ",you.HP);
+                        gotoxy(w / 2 - 5,24);
+                        printf("You lose!");
+                        system("pause");
+                        reset(&you,&computer);
+                        goto RET2;
+                    }
+                }
+            }else if(c == '2'){
 
             }
+            /**
+             * 1.积攒能量
+             * 2.攻击
+             * 3.防御
+             */
             goto RET2;
         }
     }
+}
+void reset(Player *m,Player *n){
+    m -> name = "You";
+    m -> HP = 100;
+    m -> power = 0;
+    n -> name = "Computer";
+    n -> HP = 100;
+    n -> power = 0;
 }
