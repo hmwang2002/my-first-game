@@ -163,13 +163,13 @@ void game2(char **map){
     gotoxy(3,6);
     printf("%s",computer.name);
     gotoxy(3,7);
-    printf("blood: %d",computer.HP);
+    printf("HP: %d",computer.HP);
     gotoxy(3,8);
     printf("power: %d",computer.power);
     gotoxy(w - 12,6);
     printf("%s",you.name);
     gotoxy(w - 12,7);
-    printf("blood: %d",you.HP);
+    printf("HP: %d",you.HP);
     gotoxy(w - 12,8);
     printf("power: %d",you.power);
     /**
@@ -182,9 +182,11 @@ void game2(char **map){
             RET3: com = ComputerChoice();//产生随机数
             if(computer.power == 0 && com == 2)goto RET3;
             if(you.power == 0 && com == 3)goto RET3;
+            if(computer.power >= 80 && (com == 1 || com == 3))goto RET3;
             /**
              * 防止出现没有能量电脑却攻击的情况
              * 防止出现玩家没能量，电脑却防守的情况
+             * 尽量避免电脑拼命积攒能量的情况
              */
             if(c == 'q'){
                 return;
@@ -195,7 +197,7 @@ void game2(char **map){
                 }else if(com == 2){
                     you.HP -= 10;
                     if(you.HP <= 0){
-                        gotoxy(w - 4,7);
+                        gotoxy(w - 7,7);
                         printf("\b\b %d  ",you.HP);
                         gotoxy(w / 2 - 5,24);
                         printf("You lose!");
@@ -205,7 +207,69 @@ void game2(char **map){
                     }
                 }
             }else if(c == '2'){
-
+                if(you.power == 0){
+                    you.HP = 0;
+                    gotoxy(w - 7,7);
+                    printf("\b\b %d  ",you.HP);
+                    gotoxy(w / 2 - 5,24);
+                    printf("You lose!");
+                    system("pause");
+                    reset(&you,&computer);
+                    /**
+                     * 能量不够，憋死了
+                     */
+                }else if(you.power != 0 && com == 1){
+                    computer .HP -= 10;
+                    you .power -= 10;
+                    computer.power += 10;
+                    if(computer.HP == 0){
+                        gotoxy(8,7);
+                        printf("\b\b %d  ", computer.HP);
+                        gotoxy(w / 2 - 5,24);
+                        printf("You win!");
+                        system("pause");
+                        reset(&you,&computer);
+                    }
+                }else if(you.power != 0 && com == 2){
+                    you.power -= 10;
+                    computer .power -= 10;
+                    you.HP -= 10;
+                    computer .HP -= 10;
+                    if(you.HP == 0 && computer.HP != 0){
+                        gotoxy(w - 7,7);
+                        printf("\b\b %d  ",you.HP);
+                        gotoxy(w / 2 - 5,24);
+                        printf("You lose!");
+                        system("pause");
+                        reset(&you,&computer);
+                    }else if(computer .HP == 0 && you.HP != 0){
+                        gotoxy(8,7);
+                        printf("\b\b %d  ", computer.HP);
+                        gotoxy(w / 2 - 5,24);
+                        printf("You win!");
+                        system("pause");
+                        reset(&you,&computer);
+                    }else if(computer.HP == 0 && you.HP == 0){
+                        gotoxy(8,7);
+                        printf("\b\b %d  ", computer.HP);
+                        gotoxy(w - 7,7);
+                        printf("\b\b %d  ",you.HP);
+                        gotoxy(w / 2 - 2,24);
+                        printf("Draw!");
+                        system("pause");
+                        reset(&you,&computer);
+                    }
+                } else if(you.power != 0 && com == 3){
+                    you.power -= 10;
+                }
+                goto RET2;
+            }else if(c == '3'){
+                if(com == 1){
+                    computer.power += 10;
+                }else if(com == 2){
+                    computer.power -= 10;
+                }
+                goto RET2;
             }
             /**
              * 1.积攒能量
