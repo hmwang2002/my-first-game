@@ -8,6 +8,7 @@
 HANDLE consoleHandle;
 int w = 100;
 int h = 50;
+CONSOLE_CURSOR_INFO cci;
 typedef struct player{
     char *name;
     int HP;
@@ -20,9 +21,9 @@ void gotoxy(int x,int y){
 void reset(Player *m,Player *n);
 void game1(char **map);
 void game2(char **map);
+void game3(char **map);
 int main() {
     consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-
     char **map = malloc(h * sizeof(char *));
     for (int i = 0; i < h; i++) {
         *(map + i) = malloc((w + 1) * sizeof(char));
@@ -43,13 +44,12 @@ int main() {
     printf("Press 1, 2, 3 to choose a game to play.");
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
-    CONSOLE_CURSOR_INFO cci;
-    cci.dwSize = 100;
-    cci.bVisible = FALSE;
-    SetConsoleCursorInfo(consoleHandle,&cci);
     srand((unsigned)time(NULL));
     int flag = 0;
     while(1) {
+        cci.dwSize = 100;
+        cci.bVisible = FALSE;
+        SetConsoleCursorInfo(consoleHandle,&cci);
         while (kbhit() != 0) {
             char c = getch();
             if(c == '1'){
@@ -60,12 +60,15 @@ int main() {
                 game2(map);
                 system("cls");
                 goto RET;
+            }else if(c == '3'){
+                game3(map);
+                system("cls");
+                goto RET;
             }
             else if(c == 'q'){
                 flag = 1;
                 break;
             }
-
         }
         if(flag == 1){
             break;
@@ -84,9 +87,6 @@ void game1(char **map){
     printf("Press q if you want to quit");
     gotoxy(w/2 - 27,2);
     printf("rock : press 1; scissors : press 2; paper : press 3");
-    CONSOLE_CURSOR_INFO cci;
-    cci.dwSize = 100;
-    cci.bVisible = FALSE;
     SetConsoleCursorInfo(consoleHandle,&cci);
     while (1){
         while (kbhit() != 0){
@@ -140,11 +140,9 @@ void game1(char **map){
     }
 }
 void game2(char **map){
-    CONSOLE_CURSOR_INFO cci;
-    cci.bVisible = FALSE;
-    SetConsoleCursorInfo(consoleHandle,&cci);
     Player you,computer;
     reset(&you,&computer);
+    int count = 1;
     RET2: system("cls");
     //RET2: 重启游戏2
     drawmap(map,w,h);
@@ -158,6 +156,8 @@ void game2(char **map){
     printf("press 3 if you want to defend");
     gotoxy(w / 2 - 30 ,5);
     printf("Warning: If your power is zero and you choose to attack, then you lose");
+    gotoxy(w / 2 - 3,6);
+    printf("Round %d",count);
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
     gotoxy(3,6);
@@ -178,7 +178,7 @@ void game2(char **map){
     while (1){
         while (kbhit() != 0){
             char c = getch();
-            int com = 0;
+            int com;
             RET3: com = ComputerChoice();//产生随机数
             if(computer.power == 0 && com == 2)goto RET3;
             if(you.power == 0 && com == 3)goto RET3;
@@ -196,6 +196,7 @@ void game2(char **map){
                     computer.power += 10;
                 }else if(com == 2){
                     you.HP -= 10;
+                    computer.power -= 10;
                     if(you.HP <= 0){
                         gotoxy(w - 7,7);
                         printf("\b\b %d  ",you.HP);
@@ -203,7 +204,6 @@ void game2(char **map){
                         printf("You lose!");
                         system("pause");
                         reset(&you,&computer);
-                        goto RET2;
                     }
                 }
             }else if(c == '2'){
@@ -262,23 +262,91 @@ void game2(char **map){
                 } else if(you.power != 0 && com == 3){
                     you.power -= 10;
                 }
-                goto RET2;
             }else if(c == '3'){
                 if(com == 1){
                     computer.power += 10;
                 }else if(com == 2){
                     computer.power -= 10;
                 }
-                goto RET2;
             }
             /**
              * 1.积攒能量
              * 2.攻击
              * 3.防御
              */
+             count++;
             goto RET2;
         }
     }
+}
+void game3(char **map){
+    cci.bVisible = TRUE;
+    SetConsoleCursorInfo(consoleHandle,&cci);
+    RET4 : system("cls");
+    drawmap(map,w,h);
+    gotoxy(w / 2 - 15,48);
+    printf("Press q if you want to quit");
+    gotoxy(w / 2 - 10,1);
+    printf("Welcome to Squid game!");
+    gotoxy(w / 2 - 17,2);
+    printf("Everytime you will have two lattices to jump.");
+    gotoxy(w / 2 - 15,3);
+    printf("one means life and another means death.");
+    gotoxy(w / 2 - 17,4);
+    char str[10] = {0};
+    int lines;
+    printf("Choose how many times you want to experience");
+    gotoxy(w / 2 - 8,5);
+    printf("Type a number:");
+    scanf("%s",str);
+    if(str[0] != 'q'){
+        sscanf(str,"%d",&lines);
+    }else{
+        cci.bVisible = FALSE;
+        SetConsoleCursorInfo(consoleHandle,&cci);
+        return;
+    }
+    system("cls");
+    gotoxy(10,0);
+    printf("Press 1 or 2, or q if you want to quit");
+    for (int i = 1; i <= lines ; i++) {
+        gotoxy(24,i);
+        printf("* *");
+    }
+    gotoxy(0,0);
+    for (int i = 1; i <= lines ; i++) {
+        int random = rand()%2 + 1;
+        char c = (char) getch();
+        if(c == '1' && random == 2){
+            gotoxy(24,i);
+        }else if(c == '1' && random == 1){
+            gotoxy(18 , i);
+            printf("You die!");
+            system("pause");
+            goto RET4;
+        }else if(c == '2' && random == 1){
+            gotoxy(26,i);
+        }else if(c == '2' && random == 2){
+            gotoxy(18 , i);
+            printf("You die!");
+            system("pause");
+            goto RET4;
+        }
+        else if(c == 'q'){
+            cci.bVisible = FALSE;
+            SetConsoleCursorInfo(consoleHandle,&cci);
+            return;
+        }
+    }
+    system("cls");
+    drawmap(map,w,h);
+    gotoxy(w / 2 - 6, h / 2 - 1);
+    printf("You are alive!");
+    system("pause");
+    goto RET4;
+    /**
+     * 记得resume前再次隐藏光标
+     */
 }
 void reset(Player *m,Player *n){
     m -> name = "You";
