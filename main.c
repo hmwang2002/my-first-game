@@ -18,7 +18,8 @@ void gotoxy(int x,int y){
     COORD co = (COORD){.X = x, .Y = y};
     SetConsoleCursorPosition(consoleHandle,co);
 }
-void reset(Player *m,Player *n);
+void reset(Player *m,Player *n,int *count);
+void PrintLastRound(int last_player,int last_com);
 void game1(char **map);
 void game2(char **map);
 void game3(char **map);
@@ -32,8 +33,8 @@ int main() {
         memset(*(map + i),0,w + 1);
     }
     RET:    drawmap(map,w,h);
-    gotoxy(w / 2 - 27,1);
-    printf("Welcome to 99in1! There have 3 games for you to choose.");
+    gotoxy(w / 2 - 25,1);
+    printf("Welcome to 99in1! Miku has 3 games for you to choose.");
     gotoxy(w/2 - 8,23);
     printf("1. Finger-guessing");
     gotoxy(w/2 - 8,24);
@@ -74,6 +75,11 @@ int main() {
             break;
         }
     }
+    system("cls");
+    drawmap(map,w,h);
+    gotoxy(w / 2 - 7,23);
+    printf("Miku will miss you...");
+    Sleep(2000);
     cci.bVisible = TRUE;
     SetConsoleCursorInfo(consoleHandle,&cci);
     free(map);
@@ -141,8 +147,11 @@ void game1(char **map){
 }
 void game2(char **map){
     Player you,computer;
-    reset(&you,&computer);
     int count = 1;
+    int last_player = 1;
+    int last_com = 1;
+    reset(&you,&computer,&count);
+    count++;
     RET2: system("cls");
     //RET2: 重启游戏2
     drawmap(map,w,h);
@@ -175,6 +184,9 @@ void game2(char **map){
     /**
      * 打印完了该打印的信息
      */
+     if(count > 1){
+         PrintLastRound(last_player,last_com);
+     }
     while (1){
         while (kbhit() != 0){
             char c = getch();
@@ -188,10 +200,12 @@ void game2(char **map){
              * 防止出现玩家没能量，电脑却防守的情况
              * 尽量避免电脑拼命积攒能量的情况
              */
+             last_com = com;
             if(c == 'q'){
                 return;
             }else if(c == '1'){
                 you.power += 10;
+                last_player = 1;
                 if(com == 1){
                     computer.power += 10;
                 }else if(com == 2){
@@ -203,10 +217,11 @@ void game2(char **map){
                         gotoxy(w / 2 - 5,24);
                         printf("You lose!");
                         system("pause");
-                        reset(&you,&computer);
+                        reset(&you,&computer,&count);
                     }
                 }
             }else if(c == '2'){
+                last_player = 2;
                 if(you.power == 0){
                     you.HP = 0;
                     gotoxy(w - 7,7);
@@ -214,7 +229,7 @@ void game2(char **map){
                     gotoxy(w / 2 - 5,24);
                     printf("You lose!");
                     system("pause");
-                    reset(&you,&computer);
+                    reset(&you,&computer,&count);
                     /**
                      * 能量不够，憋死了
                      */
@@ -228,7 +243,7 @@ void game2(char **map){
                         gotoxy(w / 2 - 5,24);
                         printf("You win!");
                         system("pause");
-                        reset(&you,&computer);
+                        reset(&you,&computer,&count);
                     }
                 }else if(you.power != 0 && com == 2){
                     you.power -= 10;
@@ -241,14 +256,14 @@ void game2(char **map){
                         gotoxy(w / 2 - 5,24);
                         printf("You lose!");
                         system("pause");
-                        reset(&you,&computer);
+                        reset(&you,&computer,&count);
                     }else if(computer .HP == 0 && you.HP != 0){
                         gotoxy(8,7);
                         printf("\b\b %d  ", computer.HP);
                         gotoxy(w / 2 - 5,24);
                         printf("You win!");
                         system("pause");
-                        reset(&you,&computer);
+                        reset(&you,&computer,&count);
                     }else if(computer.HP == 0 && you.HP == 0){
                         gotoxy(8,7);
                         printf("\b\b %d  ", computer.HP);
@@ -257,12 +272,13 @@ void game2(char **map){
                         gotoxy(w / 2 - 2,24);
                         printf("Draw!");
                         system("pause");
-                        reset(&you,&computer);
+                        reset(&you,&computer,&count);
                     }
                 } else if(you.power != 0 && com == 3){
                     you.power -= 10;
                 }
             }else if(c == '3'){
+                last_player = 3;
                 if(com == 1){
                     computer.power += 10;
                 }else if(com == 2){
@@ -345,14 +361,45 @@ void game3(char **map){
     system("pause");
     goto RET4;
     /**
-     * 记得resume前再次隐藏光标
+     * 记得返回目录前再次隐藏光标
      */
 }
-void reset(Player *m,Player *n){
+void reset(Player *m,Player *n,int *count){
     m -> name = "You";
     m -> HP = 100;
     m -> power = 0;
     n -> name = "Computer";
     n -> HP = 100;
     n -> power = 0;
+    *count = 0;
+}
+void PrintLastRound(int last_player,int last_com){
+    if(last_player == 1 && last_com == 1){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:gain power   You:gain power");
+    }else if(last_player == 1 && last_com == 2){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:attack   You:gain power");
+    }else if(last_player == 1 && last_com == 3){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:defend   You:gain power");
+    }else if(last_player == 2 && last_com == 1){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:gain power   You:attack");
+    }else if(last_player == 2 && last_com == 2){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:attack   You:attack");
+    }else if(last_player == 2 && last_com == 3){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:defend   You:attack");
+    } else if(last_player == 3 && last_com == 1){
+        gotoxy(w/2 - 13,23);
+        printf("Computer:gain power   You:defend");
+    }else if(last_player == 3 && last_com == 2){
+        gotoxy(w/2 -13,23);
+        printf("Computer:attack   You:defend");
+    }else if(last_player == 3 && last_com == 3){
+        gotoxy(w/2 -13,23);
+        printf("Computer:defend   You:defend");
+    }
 }

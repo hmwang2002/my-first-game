@@ -1,33 +1,33 @@
 
 ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8åôÃâÛ/
 ec:S5276"Kimplicit conversion loses integer precision: 'int' to 'SHORT' (aka 'short')(°Ş×ƒ8æôÃâÛ/
-Vc:S52766"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
-Vc:S5276_"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
-Wc:S5276´"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ÓåÏÃÜ/
-ˆc:SingleGotoOrBreakPerIteration5"QReduce the number of nested "break" and "goto" statements from 4 to 1 authorized.(†®¦õüÿÿÿÿ8İöÃâÛ/
-lc:BackJumpWithGoto:"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8±çÏÃÜ/
-lc:BackJumpWithGoto>"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8´çÏÃÜ/
-lc:BackJumpWithGotoB"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8´çÏÃÜ/
-sc:S3776Q"TRefactor this function to reduce its Cognitive Complexity from 40 to the 25 allowed.(‚ñ œşÿÿÿÿ8ÑöÃâÛ/
-fc:S134f"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
-fc:S134s"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
-gc:S134€"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
-_c:S1751\"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÑöÃâÛ/
-rc:BackJumpWithGotoŠ"GThis goto statement must be replaced by a standard iteration statement.(µıÛûÿÿÿÿ8ÑöÃâÛ/
-oc:S3776"TRefactor this function to reduce its Cognitive Complexity from 66 to the 25 allowed.(ü®ó„8öô†Ü/
-lc:S134Ã"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«¨ïøÿÿÿÿ8öô†Ü/
-gc:S134Ò"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(áñÙ8”—‰Ü/
-lc:S134Š"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«¨ïøÿÿÿÿ8”—‰Ü/
-`c:S1751³"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8öô†Ü/
-cc:SingleDeclarationPerStatement"0Define each identifier in a dedicated statement.(ÜÎÁò8İöÃâÛ/
-}c:SingleGotoOrBreakPerIteration³"EReduce the number of nested "goto" statements from 4 to 1 authorized.(†®¦õüÿÿÿÿ8·çÏÃÜ/
-rc:BackJumpWithGoto–"GThis goto statement must be replaced by a standard iteration statement.(ŒÅÜÀşÿÿÿÿ8÷ô†Ü/
-rc:BackJumpWithGoto·"GThis goto statement must be replaced by a standard iteration statement.(³‹ÖÆşÿÿÿÿ8İöÃâÛ/
-mc:BackJumpWithGoto¸"GThis goto statement must be replaced by a standard iteration statement.(ÛàÊİ8ª§ââÛ/
-rc:BackJumpWithGoto¹"GThis goto statement must be replaced by a standard iteration statement.(ÍŸ€ãıÿÿÿÿ8•—‰Ü/
-Pc:S1079­"5Add a field width specifier to this "%s" placeholder.(±ÇãÇ8’½‘ÂÜ/
-xc:SingleGotoOrBreakPerIteration½"EReduce the number of nested "goto" statements from 2 to 1 authorized.(¥Ÿ¹ù8€³õÁÜ/
-mc:BackJumpWithGotoÚ"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8õ¸ğÁÜ/
-kc:S1871É"QThe code of this branch is a duplicate; refactor so that all branches are unique.(¢¡À8€³õÁÜ/
-mc:BackJumpWithGotoÆ"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8€³õÁÜ/
-mc:BackJumpWithGotoÍ"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8ÈıÁÜ/
+Vc:S52767"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
+Vc:S5276e"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ñôÃâÛ/
+Wc:S5276À"<implicit conversion loses integer precision: 'int' to 'char'(¨¥¹Õ8ş¿ŞÚÜ/
+ˆc:SingleGotoOrBreakPerIteration6"QReduce the number of nested "break" and "goto" statements from 4 to 1 authorized.(†®¦õüÿÿÿÿ8İöÃâÛ/
+lc:BackJumpWithGoto;"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8±çÏÃÜ/
+lc:BackJumpWithGoto?"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8´çÏÃÜ/
+lc:BackJumpWithGotoC"GThis goto statement must be replaced by a standard iteration statement.(ç„í±8´çÏÃÜ/
+sc:S3776W"TRefactor this function to reduce its Cognitive Complexity from 40 to the 25 allowed.(‚ñ œşÿÿÿÿ8ÑöÃâÛ/
+fc:S134l"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+fc:S134y"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+gc:S134†"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ò»õ‘8ÑöÃâÛ/
+_c:S1751b"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÑöÃâÛ/
+rc:BackJumpWithGoto"GThis goto statement must be replaced by a standard iteration statement.(µıÛûÿÿÿÿ8ÑöÃâÛ/
+oc:S3776”"TRefactor this function to reduce its Cognitive Complexity from 67 to the 25 allowed.(ü®ó„8ÜÁŞÚÜ/
+lc:S134Ñ"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«¨ïøÿÿÿÿ8ÜÁŞÚÜ/
+gc:S134á"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(áñÙ8ÜÁŞÚÜ/
+lc:S134š"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«¨ïøÿÿÿÿ8„¸ äÜ/
+`c:S1751¿"@Change this loop body so that it can be executed more than once.(†®¦õüÿÿÿÿ8ÜÁŞÚÜ/
+cc:SingleDeclarationPerStatement•"0Define each identifier in a dedicated statement.(ÜÎÁò8İöÃâÛ/
+}c:SingleGotoOrBreakPerIteration¿"EReduce the number of nested "goto" statements from 4 to 1 authorized.(†®¦õüÿÿÿÿ8ßÁŞÚÜ/
+rc:BackJumpWithGoto¦"GThis goto statement must be replaced by a standard iteration statement.(ŒÅÜÀşÿÿÿÿ8„¸ äÜ/
+rc:BackJumpWithGotoÃ"GThis goto statement must be replaced by a standard iteration statement.(³‹ÖÆşÿÿÿÿ8ßÁŞÚÜ/
+mc:BackJumpWithGotoÄ"GThis goto statement must be replaced by a standard iteration statement.(ÛàÊİ8ßÁŞÚÜ/
+rc:BackJumpWithGotoÅ"GThis goto statement must be replaced by a standard iteration statement.(ÍŸ€ãıÿÿÿÿ8ßÁŞÚÜ/
+Pc:S1079½"5Add a field width specifier to this "%s" placeholder.(±ÇãÇ8‡¸ äÜ/
+xc:SingleGotoOrBreakPerIterationÍ"EReduce the number of nested "goto" statements from 2 to 1 authorized.(¥Ÿ¹ù8Š¸ äÜ/
+mc:BackJumpWithGotoê"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8Š¸ äÜ/
+kc:S1871Ù"QThe code of this branch is a duplicate; refactor so that all branches are unique.(¢¡À8Š¸ äÜ/
+mc:BackJumpWithGotoÖ"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8Š¸ äÜ/
+mc:BackJumpWithGotoİ"GThis goto statement must be replaced by a standard iteration statement.(ø‚€8Š¸ äÜ/
