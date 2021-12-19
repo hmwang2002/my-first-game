@@ -304,14 +304,14 @@ void game3(char **map){
     printf("Press q if you want to quit");
     gotoxy(w / 2 - 10,1);
     printf("Welcome to Squid game!");
-    gotoxy(w / 2 - 17,2);
+    gotoxy(w / 2 - 21,2);
     printf("Everytime you will have two lattices to jump.");
-    gotoxy(w / 2 - 15,3);
+    gotoxy(w / 2 - 18,3);
     printf("one means life and another means death.");
-    gotoxy(w / 2 - 17,4);
+    gotoxy(w / 2 - 21,4);
     char str[10] = {0};
     int lines;
-    printf("Choose how many times you want to experience");
+    printf("Choose how many times you want to experience.");
     gotoxy(w / 2 - 8,5);
     printf("Type a number:");
     scanf("%s",str);
@@ -352,6 +352,8 @@ void game3(char **map){
             cci.bVisible = FALSE;
             SetConsoleCursorInfo(consoleHandle,&cci);
             return;
+        }else{
+            i--;
         }
     }
     system("cls");

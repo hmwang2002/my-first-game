@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "gameswhm",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "computer_choice::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-computer_choice-Debug-2b5691ddeb558a6100e6.json",
+					"name" : "computer_choice",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy-Debug-cb69692c44909d47d228.json",
+					"name" : "copy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drawmap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drawmap-Debug-fd4c126aed5533558e4c.json",
+					"name" : "drawmap",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gameswhm::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gameswhm-Debug-a2cf1f433f94c54fe374.json",
+					"name" : "gameswhm",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/gameswhm/cmake-build-debug",
+		"source" : "D:/gameswhm"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
