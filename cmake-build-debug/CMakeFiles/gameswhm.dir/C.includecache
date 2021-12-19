@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/gameswhm/computer_choice.c
+stdlib.h
+-
+
 D:/gameswhm/drawmap.c
 stdio.h
 -
@@ -19,6 +23,10 @@ windows.h
 -
 stdlib.h
 -
+time.h
+-
 drawmap.c
 D:/gameswhm/drawmap.c
+computer_choice.c
+D:/gameswhm/computer_choice.c
 

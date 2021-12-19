@@ -25,6 +25,7 @@ void game2(char **map);
 void game3(char **map);
 int main() {
     consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+    system("color F3");
     char **map = malloc(h * sizeof(char *));
     for (int i = 0; i < h; i++) {
         *(map + i) = malloc((w + 1) * sizeof(char));
@@ -41,7 +42,7 @@ int main() {
     printf("2. Clapping game");
     gotoxy(w/2 - 8,25);
     printf("3. Squid game");
-    gotoxy(w / 2 - 18,47);
+    gotoxy(w / 2 - 21,47);
     printf("Press 1, 2, 3 to choose a game to play.");
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
@@ -155,17 +156,17 @@ void game2(char **map){
     RET2: system("cls");
     //RET2: 重启游戏2
     drawmap(map,w,h);
-    gotoxy(w / 2 - 10,1);
+    gotoxy(w / 2 - 15,1);
     printf("Welcome to Clapping game");
-    gotoxy(w / 2 - 25,2);
+    gotoxy(w / 2 - 30,2);
     printf("You have 3 choices: press 1 if you want to gain power");
-    gotoxy(w / 2 - 10,3);
+    gotoxy(w / 2 - 15,3);
     printf("press 2 if you want to attack");
-    gotoxy(w / 2 - 10,4);
+    gotoxy(w / 2 - 15,4);
     printf("press 3 if you want to defend");
-    gotoxy(w / 2 - 30 ,5);
+    gotoxy(w / 2 - 35 ,5);
     printf("Warning: If your power is zero and you choose to attack, then you lose");
-    gotoxy(w / 2 - 3,6);
+    gotoxy(w / 2 - 8,6);
     printf("Round %d",count);
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
