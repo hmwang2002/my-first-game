@@ -5,6 +5,7 @@
 #include <time.h>
 #include "drawmap.c"
 #include "computer_choice.c"
+#include "quiz.c"
 HANDLE consoleHandle;
 int w = 100;
 int h = 50;
@@ -19,10 +20,12 @@ void gotoxy(int x,int y){
     SetConsoleCursorPosition(consoleHandle,co);
 }
 void reset(Player *m,Player *n,int *count);
+int computer_logic(int power1,int hp1,int power2,int hp2,int random);
 void PrintLastRound(int last_player,int last_com);
 void game1(char **map);
 void game2(char **map);
 void game3(char **map);
+void game4(char **map);
 int main() {
     consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
     system("color F3");
@@ -42,8 +45,10 @@ int main() {
     printf("2. Clapping game");
     gotoxy(w/2 - 8,25);
     printf("3. Squid game");
-    gotoxy(w / 2 - 21,47);
-    printf("Press 1, 2, 3 to choose a game to play.");
+    gotoxy(w / 2 - 8,26);
+    printf("4. Miku's little quiz");
+    gotoxy(w / 2 - 24,47);
+    printf("Press 1, 2, 3 or 4 to choose a game to play.");
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
     srand((unsigned)time(NULL));
@@ -64,6 +69,10 @@ int main() {
                 goto RET;
             }else if(c == '3'){
                 game3(map);
+                system("cls");
+                goto RET;
+            }else if(c == '4'){
+                game4(map);
                 system("cls");
                 goto RET;
             }
@@ -170,6 +179,8 @@ void game2(char **map){
     printf("Round %d",count);
     gotoxy(w / 2 - 15,48);
     printf("Press q if you want to quit");
+    gotoxy(w / 2 - 16,47);
+    printf("Press r if you want to resume");
     gotoxy(3,6);
     printf("%s",computer.name);
     gotoxy(3,7);
@@ -192,7 +203,9 @@ void game2(char **map){
         while (kbhit() != 0){
             char c = getch();
             int com;
-            RET3: com = ComputerChoice();//产生随机数
+            int com_init;
+            RET3: com_init = ComputerChoice();//产生随机数
+            com = computer_logic(computer.power, computer.HP,you.power,you.HP,com_init);
             if(computer.power == 0 && com == 2)goto RET3;
             if(you.power == 0 && com == 3)goto RET3;
             if(computer.power >= 80 && (com == 1 || com == 3))goto RET3;
@@ -285,6 +298,8 @@ void game2(char **map){
                 }else if(com == 2){
                     computer.power -= 10;
                 }
+            }else if(c == 'r'){
+                reset(&you,&computer,&count);
             }
             /**
              * 1.积攒能量
@@ -367,6 +382,35 @@ void game3(char **map){
      * 记得返回目录前再次隐藏光标
      */
 }
+void game4(char **map){
+    int score = 0;
+    int i = 0;
+    while (i < 20){
+        system("cls");
+        drawmap(map,w,h);
+        gotoxy(w / 2 - 15,48);
+        printf("Press q if you want to quit");
+        gotoxy(w / 2 - 17,1);
+        printf("Miku has a little quiz for you!");
+        gotoxy(w / 2 - 17,22);
+        printf("%s",miku_quiz[i].question);
+        gotoxy(w / 2 - 17,23);
+        printf("%s",miku_quiz[i].choice1);
+        gotoxy(w / 2 -17,24);
+        printf("%s",miku_quiz[i].choice2);
+        gotoxy(w / 2 - 17,25);
+        printf("%s",miku_quiz[i].choice3);
+        char ch = getch();
+        if(ch == 'q'){
+            return;
+        }else if(ch == '1' || ch == '2' || ch == '3'){
+            if(ch - 48 == miku_quiz[i].right_choice){
+                score += 5;
+            }
+        }
+        i++;
+    }
+}
 void reset(Player *m,Player *n,int *count){
     m -> name = "You";
     m -> HP = 100;
@@ -377,32 +421,67 @@ void reset(Player *m,Player *n,int *count){
     *count = 0;
 }
 void PrintLastRound(int last_player,int last_com){
+    gotoxy(w/2 - 18,23);
     if(last_player == 1 && last_com == 1){
-        gotoxy(w/2 - 13,23);
         printf("Computer:gain power   You:gain power");
     }else if(last_player == 1 && last_com == 2){
-        gotoxy(w/2 - 13,23);
         printf("Computer:attack   You:gain power");
     }else if(last_player == 1 && last_com == 3){
-        gotoxy(w/2 - 13,23);
         printf("Computer:defend   You:gain power");
     }else if(last_player == 2 && last_com == 1){
-        gotoxy(w/2 - 13,23);
         printf("Computer:gain power   You:attack");
     }else if(last_player == 2 && last_com == 2){
-        gotoxy(w/2 - 13,23);
         printf("Computer:attack   You:attack");
     }else if(last_player == 2 && last_com == 3){
-        gotoxy(w/2 - 13,23);
         printf("Computer:defend   You:attack");
     } else if(last_player == 3 && last_com == 1){
-        gotoxy(w/2 - 13,23);
         printf("Computer:gain power   You:defend");
     }else if(last_player == 3 && last_com == 2){
-        gotoxy(w/2 -13,23);
         printf("Computer:attack   You:defend");
     }else if(last_player == 3 && last_com == 3){
-        gotoxy(w/2 -13,23);
         printf("Computer:defend   You:defend");
+    }
+}
+int computer_logic(int power1,int hp1,int power2,int hp2,int random){
+    if(power1 - power2 <= 20 && power1 - power2 >= -20 ){
+        if(random >= 1 && random <= 3){
+            return 1;
+        }else if(4 <= random && random <= 6){
+            return 2;
+        }else if(7 <= random && random <= 9){
+            return 3;
+        }
+    }else if(power1 - power2 > 20 && hp1 >= hp2 ){
+        if(random >= 1 && random <= 2){
+            return 1;
+        }else if(3 <= random && random <= 8){
+            return 2;
+        }else if(random == 9){
+            return 3;
+        }
+    }else if(power1 - power2 > 20 && hp1 < hp2){
+        if(random >= 1 && random <= 2){
+            return 1;
+        }else if(3 <= random && random <= 7){
+            return 2;
+        }else if(random >= 8 && random <= 9){
+            return 3;
+        }
+    }else if(power2 - power1 > 20 && hp1 > hp2){
+        if(random >= 1 && random <= 3){
+            return 1;
+        }else if(4 <= random && random <= 6){
+            return 2;
+        }else if(7 <= random && random <= 9){
+            return 3;
+        }
+    }else if(power2 - power1 > 20 && hp1 <= hp2){
+        if(random >= 1 && random <= 2){
+            return 1;
+        }else if(3 <= random && random <= 4){
+            return 2;
+        }else if(5 <= random && random <= 9){
+            return 3;
+        }
     }
 }

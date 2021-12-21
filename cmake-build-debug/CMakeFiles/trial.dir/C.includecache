@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/gameswhm/quiz.c
+stdio.h
+-
+
+D:/gameswhm/trial.c
+quiz.c
+D:/gameswhm/quiz.c
+
