@@ -129,19 +129,6 @@ gameswhm/fast:
 .PHONY : gameswhm/fast
 
 #=============================================================================
-# Target rules for targets named trial
-
-# Build rule for target.
-trial: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 trial
-.PHONY : trial
-
-# fast build rule for target.
-trial/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/build
-.PHONY : trial/fast
-
-#=============================================================================
 # Target rules for targets named drawmap
 
 # Build rule for target.
@@ -313,30 +300,6 @@ quiz.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\quiz.dir\build.make CMakeFiles/quiz.dir/quiz.c.s
 .PHONY : quiz.c.s
 
-trial.obj: trial.c.obj
-.PHONY : trial.obj
-
-# target to build an object file
-trial.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/trial.c.obj
-.PHONY : trial.c.obj
-
-trial.i: trial.c.i
-.PHONY : trial.i
-
-# target to preprocess a source file
-trial.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/trial.c.i
-.PHONY : trial.c.i
-
-trial.s: trial.c.s
-.PHONY : trial.s
-
-# target to generate assembly for a file
-trial.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/trial.c.s
-.PHONY : trial.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -350,7 +313,6 @@ help:
 	@echo ... drawmap
 	@echo ... gameswhm
 	@echo ... quiz
-	@echo ... trial
 	@echo ... computer_choice.obj
 	@echo ... computer_choice.i
 	@echo ... computer_choice.s
@@ -366,9 +328,6 @@ help:
 	@echo ... quiz.obj
 	@echo ... quiz.i
 	@echo ... quiz.s
-	@echo ... trial.obj
-	@echo ... trial.i
-	@echo ... trial.s
 .PHONY : help
 
 

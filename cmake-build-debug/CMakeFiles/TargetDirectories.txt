@@ -1,5 +1,4 @@
 D:/gameswhm/cmake-build-debug/CMakeFiles/gameswhm.dir
-D:/gameswhm/cmake-build-debug/CMakeFiles/trial.dir
 D:/gameswhm/cmake-build-debug/CMakeFiles/drawmap.dir
 D:/gameswhm/cmake-build-debug/CMakeFiles/quiz.dir
 D:/gameswhm/cmake-build-debug/CMakeFiles/copy.dir

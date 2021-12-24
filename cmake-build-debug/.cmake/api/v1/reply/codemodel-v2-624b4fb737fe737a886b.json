@@ -19,8 +19,7 @@
 						1,
 						2,
 						3,
-						4,
-						5
+						4
 					]
 				}
 			],
@@ -39,8 +38,7 @@
 						1,
 						2,
 						3,
-						4,
-						5
+						4
 					]
 				}
 			],
@@ -79,13 +77,6 @@
 					"id" : "quiz::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-quiz-Debug-64f4f805605669879a0f.json",
 					"name" : "quiz",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "trial::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-trial-Debug-a15009a45632655713c3.json",
-					"name" : "trial",
 					"projectIndex" : 0
 				}
 			]

@@ -47,7 +47,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/gameswhm.dir/DependInfo.cmake"
-  "CMakeFiles/trial.dir/DependInfo.cmake"
   "CMakeFiles/drawmap.dir/DependInfo.cmake"
   "CMakeFiles/quiz.dir/DependInfo.cmake"
   "CMakeFiles/copy.dir/DependInfo.cmake"

@@ -63,7 +63,6 @@ CMAKE_BINARY_DIR = D:\gameswhm\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/gameswhm.dir/all
-all: CMakeFiles/trial.dir/all
 all: CMakeFiles/drawmap.dir/all
 all: CMakeFiles/quiz.dir/all
 all: CMakeFiles/copy.dir/all
@@ -76,7 +75,6 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gameswhm.dir/clean
-clean: CMakeFiles/trial.dir/clean
 clean: CMakeFiles/drawmap.dir/clean
 clean: CMakeFiles/quiz.dir/clean
 clean: CMakeFiles/copy.dir/clean
@@ -108,32 +106,6 @@ gameswhm: CMakeFiles/gameswhm.dir/rule
 CMakeFiles/gameswhm.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gameswhm.dir\build.make CMakeFiles/gameswhm.dir/clean
 .PHONY : CMakeFiles/gameswhm.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/trial.dir
-
-# All Build rule for target.
-CMakeFiles/trial.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\gameswhm\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target trial"
-.PHONY : CMakeFiles/trial.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/trial.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\gameswhm\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/trial.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\gameswhm\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/trial.dir/rule
-
-# Convenience name for target.
-trial: CMakeFiles/trial.dir/rule
-.PHONY : trial
-
-# clean rule for target.
-CMakeFiles/trial.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\trial.dir\build.make CMakeFiles/trial.dir/clean
-.PHONY : CMakeFiles/trial.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/drawmap.dir

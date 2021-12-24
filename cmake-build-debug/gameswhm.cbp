@@ -55,44 +55,6 @@
 					<DistClean command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="trial">
-				<Option output="D:/gameswhm/cmake-build-debug/trial.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/gameswhm/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 trial"/>
-					<CompileFile command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trial/fast">
-				<Option output="D:/gameswhm/cmake-build-debug/trial.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/gameswhm/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="c:\winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 trial/fast"/>
-					<CompileFile command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-12.0.1-mingw-w64-9.0.0-r1/mingw64/bin/mingw32-make.exe -f &quot;D:/gameswhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="drawmap">
 				<Option output="D:/gameswhm/cmake-build-debug/drawmap.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="D:/gameswhm/cmake-build-debug"/>
@@ -280,9 +242,6 @@
 		</Unit>
 		<Unit filename="D:/gameswhm/quiz.c">
 			<Option target="quiz"/>
-		</Unit>
-		<Unit filename="D:/gameswhm/trial.c">
-			<Option target="trial"/>
 		</Unit>
 		<Unit filename="D:/gameswhm/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

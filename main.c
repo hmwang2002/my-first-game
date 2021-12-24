@@ -39,13 +39,13 @@ int main() {
     RET:    drawmap(map,w,h);
     gotoxy(w / 2 - 25,1);
     printf("Welcome to 99in1! Miku has 3 games for you to choose.");
-    gotoxy(w/2 - 8,23);
+    gotoxy(w/2 - 12,23);
     printf("1. Finger-guessing");
-    gotoxy(w/2 - 8,24);
+    gotoxy(w/2 - 12,24);
     printf("2. Clapping game");
-    gotoxy(w/2 - 8,25);
+    gotoxy(w/2 - 12,25);
     printf("3. Squid game");
-    gotoxy(w / 2 - 8,26);
+    gotoxy(w / 2 - 12,26);
     printf("4. Miku's little quiz");
     gotoxy(w / 2 - 24,47);
     printf("Press 1, 2, 3 or 4 to choose a game to play.");
@@ -396,20 +396,40 @@ void game4(char **map){
         printf("%s",miku_quiz[i].question);
         gotoxy(w / 2 - 17,23);
         printf("%s",miku_quiz[i].choice1);
-        gotoxy(w / 2 -17,24);
+        gotoxy(w / 2 - 17,24);
         printf("%s",miku_quiz[i].choice2);
         gotoxy(w / 2 - 17,25);
         printf("%s",miku_quiz[i].choice3);
-        char ch = getch();
+        char ch;
+        Error_input:
+        ch = getch();
         if(ch == 'q'){
             return;
         }else if(ch == '1' || ch == '2' || ch == '3'){
             if(ch - 48 == miku_quiz[i].right_choice){
                 score += 5;
             }
+        }else{
+            goto Error_input;
         }
         i++;
     }
+    system("cls");
+    drawmap(map,w,h);
+    gotoxy(w / 2 - 10,24);
+    printf("Your score is %d",score);
+    if(score >= 80){
+        gotoxy(w / 2 - 11,25);
+        printf("Wow! Miku loves you!");
+    }else if(score >= 50 && score < 80){
+        gotoxy(w / 2 - 19,25);
+        printf("Not bad. Miku wants you to learn more!");
+    } else{
+        gotoxy(w / 2 - 21,25);
+        printf("Emmm... Miku hopes that you'll love ACG one day.");
+    }
+    Sleep(3000);
+    return;
 }
 void reset(Player *m,Player *n,int *count){
     m -> name = "You";
@@ -444,7 +464,7 @@ void PrintLastRound(int last_player,int last_com){
 }
 int computer_logic(int power1,int hp1,int power2,int hp2,int random){
     if(power1 - power2 <= 20 && power1 - power2 >= -20 ){
-        if(random >= 1 && random <= 3){
+        if(1 <= random && random <= 3){
             return 1;
         }else if(4 <= random && random <= 6){
             return 2;
@@ -452,7 +472,7 @@ int computer_logic(int power1,int hp1,int power2,int hp2,int random){
             return 3;
         }
     }else if(power1 - power2 > 20 && hp1 >= hp2 ){
-        if(random >= 1 && random <= 2){
+        if(1 <= random && random <= 2){
             return 1;
         }else if(3 <= random && random <= 8){
             return 2;
@@ -460,15 +480,15 @@ int computer_logic(int power1,int hp1,int power2,int hp2,int random){
             return 3;
         }
     }else if(power1 - power2 > 20 && hp1 < hp2){
-        if(random >= 1 && random <= 2){
+        if(1 <= random  && random <= 2){
             return 1;
         }else if(3 <= random && random <= 7){
             return 2;
-        }else if(random >= 8 && random <= 9){
+        }else if(8 <= random && random <= 9){
             return 3;
         }
     }else if(power2 - power1 > 20 && hp1 > hp2){
-        if(random >= 1 && random <= 3){
+        if(1 <= random && random <= 3){
             return 1;
         }else if(4 <= random && random <= 6){
             return 2;
@@ -476,7 +496,7 @@ int computer_logic(int power1,int hp1,int power2,int hp2,int random){
             return 3;
         }
     }else if(power2 - power1 > 20 && hp1 <= hp2){
-        if(random >= 1 && random <= 2){
+        if(1 <= random  && random <= 2){
             return 1;
         }else if(3 <= random && random <= 4){
             return 2;
